@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0d0b14">
+<title>لو غارو 🐺 — دارجة تونسية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0b14;--wolf:#e63946;--wolf2:#ff4757;--moon:#fca311;--gold:#ffd166;--text:#f1faee;--text-dim:rgba(241,250,238,0.55);--card:rgba(255,255,255,0.05);--card-border:rgba(255,255,255,0.08);--green:#06d6a0;--blue:#118ab2;--purple:#8338ec;--pink:#ff006e;--accent-glow:rgba(230,57,70,0.4);}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{min-height:100%;overflow-x:hidden;}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);display:flex;justify-content:center;align-items:center;padding:16px;position:relative;min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(230,57,70,0.25) 0%,transparent 55%),radial-gradient(ellipse at 80% 70%,rgba(252,163,17,0.15) 0%,transparent 55%),radial-gradient(ellipse at 50% 50%,rgba(131,56,236,0.12) 0%,transparent 60%),radial-gradient(ellipse at 90% 10%,rgba(6,214,160,0.1) 0%,transparent 50%);z-index:-1;animation:bgShift 25s ease-in-out infinite alternate;}
+@keyframes bgShift{0%{transform:scale(1) rotate(0);}100%{transform:scale(1.15) rotate(3deg);}}
+.app{width:100%;max-width:430px;position:relative;z-index:1;}
+.card{background:linear-gradient(135deg,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0.03) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:24px 20px;margin-bottom:14px;box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.1);animation:cardIn 0.4s cubic-bezier(0.4,0,0.2,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(12px) scale(0.98);}to{opacity:1;transform:translateY(0) scale(1);}}
+h1{font-size:32px;font-weight:900;background:linear-gradient(135deg,#fff 0%,var(--gold) 50%,var(--wolf2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px;letter-spacing:-0.5px;filter:drop-shadow(0 0 20px rgba(255,209,102,0.3));}
+h2{font-size:22px;font-weight:700;margin-bottom:16px;}
+.wolf-icon{display:inline-block;font-size:56px;margin-bottom:10px;filter:drop-shadow(0 4px 24px rgba(230,57,70,0.8)) drop-shadow(0 0 40px rgba(255,209,102,0.3));animation:wolfFloat 3s ease-in-out infinite;}
+@keyframes wolfFloat{50%{transform:translateY(-8px) rotate(-5deg);}}
+p.sub{margin:14px 0 20px;opacity:0.85;font-size:15px;line-height:1.8;}
+button{width:100%;padding:16px;font-size:16px;font-weight:700;font-family:'Cairo',sans-serif;border:none;border-radius:16px;margin-top:10px;cursor:pointer;transition:all 0.2s cubic-bezier(0.4,0,0.2,1);}
+button:active{transform:scale(0.94);}
+button:hover{filter:brightness(1.1);}
+button.primary{background:linear-gradient(135deg,var(--wolf) 0%,var(--wolf2) 100%);color:#fff;box-shadow:0 6px 20px rgba(230,57,70,0.5);}
+button.primary:hover{box-shadow:0 8px 30px rgba(230,57,70,0.7);}
+button.secondary{background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);}
+button.green{background:linear-gradient(135deg,#06d6a0 0%,#05a87e 100%);color:#fff;box-shadow:0 6px 20px rgba(6,214,160,0.35);}
+button.red{background:linear-gradient(135deg,#ff006e 0%,#c0392b 100%);color:#fff;box-shadow:0 6px 20px rgba(255,0,110,0.35);}
+button.gold{background:linear-gradient(135deg,#fca311 0%,#e67e22 100%);color:#fff;box-shadow:0 6px 20px rgba(252,163,17,0.4);}
+button.gray{background:rgba(255,255,255,0.06);color:var(--text-dim);border:1px solid rgba(255,255,255,0.1);}
+button.purple{background:linear-gradient(135deg,#8338ec,#5a2a9e);color:#fff;box-shadow:0 6px 20px rgba(131,56,236,0.35);}
+button.small{padding:11px;font-size:14px;}
+button:disabled{opacity:0.35;cursor:not-allowed;}
+input[type=text]{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,0.1);font-size:15px;font-family:'Cairo',sans-serif;text-align:center;background:rgba(0,0,0,0.4);color:#fff;transition:all 0.2s;}
+input[type=text]:focus{outline:none;border-color:var(--gold);background:rgba(0,0,0,0.6);box-shadow:0 0 0 3px rgba(255,209,102,0.15);}
+input[type=text]::placeholder{color:rgba(255,255,255,0.3);}
+.hidden{display:none !important;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);margin:20px 0;}
+.role-reveal{text-align:center;padding:30px 20px;}
+.role-icon{font-size:80px;margin-bottom:20px;animation:roleReveal 0.6s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes roleReveal{0%{transform:scale(0) rotate(-180deg);opacity:0;}100%{transform:scale(1) rotate(0);opacity:1;}}
+.role-name{font-size:32px;font-weight:900;margin-bottom:12px;}
+.role-wolf{color:var(--wolf2);text-shadow:0 0 30px rgba(255,71,87,0.6);}
+.role-villager{color:var(--green);text-shadow:0 0 30px rgba(6,214,160,0.5);}
+.role-seer{color:var(--purple);text-shadow:0 0 30px rgba(131,56,236,0.6);}
+.role-witch{color:var(--pink);text-shadow:0 0 30px rgba(255,0,110,0.5);}
+.role-guard{color:var(--blue);text-shadow:0 0 30px rgba(17,138,178,0.5);}
+.role-hunter{color:var(--gold);text-shadow:0 0 30px rgba(255,209,102,0.5);}
+.role-whitewolf{color:#bdc3c7;text-shadow:0 0 30px rgba(189,195,199,0.6);}
+.role-jester{color:#f39c12;text-shadow:0 0 30px rgba(243,156,18,0.5);}
+.role-child{color:#3498db;text-shadow:0 0 30px rgba(52,152,219,0.5);}
+.role-silentwolf{color:#34495e;text-shadow:0 0 30px rgba(52,73,94,0.6);}
+.role-desc{font-size:16px;line-height:1.8;opacity:0.9;margin:20px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:16px;border:1px solid rgba(255,255,255,0.1);}
+.phase-screen{text-align:center;padding:40px 20px;}
+.phase-icon{font-size:90px;margin-bottom:24px;animation:phaseFloat 3s ease-in-out infinite;}
+@keyframes phaseFloat{50%{transform:translateY(-10px) scale(1.05);}}
+.phase-title{font-size:36px;font-weight:900;margin-bottom:16px;}
+.phase-night{background:linear-gradient(135deg,#1a1a3e,#0f0f2a);color:#fff;}
+.phase-day{background:linear-gradient(135deg,#ffd166,#f39c12);color:#1a1a2e;}
+.phase-desc{font-size:18px;line-height:1.8;opacity:0.95;}
+.players-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;}
+.player-card{background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.1);border-radius:16px;padding:16px 12px;text-align:center;cursor:pointer;transition:all 0.2s;}
+.player-card:active{transform:scale(0.96);}
+.player-card.selected{background:linear-gradient(135deg,rgba(230,57,70,0.3),rgba(255,71,87,0.3));border-color:var(--wolf2);box-shadow:0 0 20px rgba(255,71,87,0.4);}
+.player-card.dead{opacity:0.4;filter:grayscale(1);}
+.player-card.dead::after{content:'💀';font-size:20px;display:block;margin-top:4px;}
+.player-avatar{font-size:36px;margin-bottom:6px;}
+.player-name{font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.log{max-height:300px;overflow-y:auto;background:rgba(0,0,0,0.4);border-radius:14px;padding:12px;font-size:14px;line-height:1.8;}
+.log-item{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.log-item:last-child{border-bottom:none;}
+.log-night{color:#a29bfe;}
+.log-day{color:var(--gold);}
+.log-death{color:var(--wolf2);font-weight:700;}
+.winner-icon{font-size:100px;margin-bottom:20px;animation:winnerPop 0.8s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes winnerPop{0%{transform:scale(0) rotate(-360deg);opacity:0;}100%{transform:scale(1) rotate(0);opacity:1;}}
+.winner-title{font-size:32px;font-weight:900;margin-bottom:16px;}
+.radio-group{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap;}
+.radio-group button{flex:1;min-width:60px;padding:12px;font-size:14px;border-radius:12px;margin:0;background:rgba(255,255,255,0.06);color:var(--text-dim);border:1px solid rgba(255,255,255,0.1);}
+.radio-group button.active{background:linear-gradient(135deg,var(--wolf),var(--wolf2));color:#fff;border-color:transparent;}
+body.night-mode::before{background:radial-gradient(circle at 50% 30%,rgba(17,138,178,0.15) 0%,transparent 50%),radial-gradient(circle at 20% 80%,rgba(131,56,236,0.1) 0%,transparent 50%);}
+body.day-mode::before{background:radial-gradient(circle at 50% 30%,rgba(255,209,102,0.2) 0%,transparent 50%),radial-gradient(circle at 20% 80%,rgba(243,156,18,0.1) 0%,transparent 50%);}
+@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(20px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+.discussion-timer{text-align:center;padding:40px 20px;animation:cardIn 0.5s;}
+.discussion-icon{font-size:80px;margin-bottom:20px;animation:pulse 1s infinite;}
+@keyframes pulse{50%{transform:scale(1.1);opacity:0.8;}}
+.discussion-title{font-size:28px;font-weight:900;margin-bottom:12px;color:var(--gold);}
+.discussion-sub{font-size:16px;opacity:0.85;margin-bottom:24px;line-height:1.7;}
+.big-timer{font-size:90px;font-weight:900;color:var(--gold);text-shadow:0 0 40px rgba(255,209,102,0.6);font-variant-numeric:tabular-nums;margin:20px 0;animation:timerPulse 0.5s infinite;}
+.big-timer.warning{color:var(--wolf2);text-shadow:0 0 40px rgba(255,71,87,0.8);}
+@keyframes timerPulse{50%{transform:scale(1.05);}}
+.skip-timer-btn{background:rgba(255,255,255,0.1);color:var(--text-dim);border:1px solid rgba(255,255,255,0.15);padding:12px 24px;font-size:14px;border-radius:14px;margin-top:20px;cursor:pointer;font-family:'Cairo',sans-serif;font-weight:700;}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div id="homeScreen" class="card" style="text-align:center;">
+  <div class="wolf-icon">🐺</div>
+  <h1>لو غارو</h1>
+  <p class="sub">القرية في خطر! الذئاب 🐺 كيتسناو فـ الليل...<br>شكون غادي ينجى؟ 🤔</p>
+  <button class="primary" onclick="showSetup()">🎮 ابدأ اللعبة</button>
+  <button class="secondary" onclick="showRules()">📖 القواعد</button>
+</div>
+
+<div id="rulesScreen" class="hidden card">
+  <h2>📖 القواعد</h2>
+  <div style="line-height:2;font-size:15px;">
+    <p><strong>🎯 الهدف:</strong></p>
+    <p>🐺 <strong>الذئاب:</strong> لازم يقتلو القرويين حتى يبقاو قدهم</p>
+    <p>👨‍🌾 <strong>القرويين:</strong> لازم يكتشفو الذئاب ويقتلوهم كاملين</p>
+    <p>🐺 <strong>الذئب الأبيض:</strong> يربح بوحدو — لازم يقتل الذئاب والقرويين</p>
+    <p>🎭 <strong>المهرج:</strong> يربح إلا قتلوه بالتصويت</p>
+    <p>👶 <strong>الطفل:</strong> يموت إلا شاف ذئب</p>
+    <div class="divider"></div>
+    <p><strong>🎭 الأدوار:</strong></p>
+    <p>🐺 <strong>ذئب:</strong> يقتل كل جولة</p>
+    <p>🐺 <strong>الذئب الأبيض:</strong> يقتل ذئب كل جولة</p>
+    <p>🐺 <strong>الذئب الصامت:</strong> العرافة تشوفو قروي</p>
+    <p>🔮 <strong>عرافة:</strong> تشوف دور لاعب</p>
+    <p>🧪 <strong>ساحرة:</strong> دواء + سم</p>
+    <p>🛡️ <strong>حامي:</strong> يحمي لاعب</p>
+    <p>🏹 <strong>صياد:</strong> يقتل واحد كي يموت</p>
+    <p>🎭 <strong>مهرج:</strong> يربح إلا قتلوه</p>
+    <p>👶 <strong>طفل:</strong> يموت إلا شاف ذئب</p>
+    <p>👨‍🌾 <strong>قروي:</strong> ما عندوش قدرة</p>
+  </div>
+  <button class="gray" style="margin-top:20px;" onclick="showHome()">🔙 رجوع</button>
+</div>
+<div id="setupScreen" class="hidden card">
+  <h2>⚙️ إعدادات اللعبة</h2>
+
+  <div style="margin-bottom:16px;">
+    <label style="font-size:14px;color:var(--text-dim);font-weight:600;">👥 عدد اللاعبين</label>
+    <div class="radio-group" id="playerCountGroup">
+      <button onclick="setPlayerCount(4)" data-count="4">4</button>
+      <button onclick="setPlayerCount(6)" data-count="6">6</button>
+      <button onclick="setPlayerCount(8)" data-count="8">8</button>
+      <button onclick="setPlayerCount(10)" data-count="10">10</button>
+      <button onclick="setPlayerCount(12)" data-count="12">12</button>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:8px;">
+      <button class="secondary small" onclick="setPlayerCount(playerCount-1)" style="flex:1;">−</button>
+      <div style="flex:2;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border-radius:14px;font-size:20px;font-weight:900;color:var(--gold);" id="playerCountDisplay">8</div>
+      <button class="secondary small" onclick="setPlayerCount(playerCount+1)" style="flex:1;">+</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h2 style="font-size:18px;">🎭 الأدوار</h2>
+
+  <div style="margin-bottom:12px;">
+    <label style="font-size:14px;color:var(--text-dim);font-weight:600;">🐺 عدد الذئاب</label>
+    <div style="display:flex;gap:8px;margin-top:6px;">
+      <button class="secondary small" onclick="setWolves(wolfCount-1)" style="flex:1;">−</button>
+      <div style="flex:2;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border-radius:14px;font-size:20px;font-weight:900;color:var(--wolf2);" id="wolfCountDisplay">2</div>
+      <button class="secondary small" onclick="setWolves(wolfCount+1)" style="flex:1;">+</button>
+    </div>
+  </div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">🔮 العرافة</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('seer')" id="seerBtn" style="background:linear-gradient(135deg,#8338ec,#5a2a9e);">مفعّلة</button></div></div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">🧪 الساحرة</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('witch')" id="witchBtn" style="background:linear-gradient(135deg,#ff006e,#c2185b);">مفعّلة</button></div></div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">🛡️ الحامي</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('guard')" id="guardBtn" style="background:linear-gradient(135deg,#118ab2,#0d6d8c);">مفعّلة</button></div></div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">🏹 الصياد</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('hunter')" id="hunterBtn" style="background:linear-gradient(135deg,#fca311,#e67e22);">مفعّلة</button></div></div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">🐺 الذئب الأبيض</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('whiteWolf')" id="whiteWolfBtn" style="background:rgba(255,255,255,0.06);">مطفي</button></div></div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">🐺 الذئب الصامت</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('silentWolf')" id="silentWolfBtn" style="background:rgba(255,255,255,0.06);">مطفي</button></div></div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">🎭 المهرج</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('jester')" id="jesterBtn" style="background:rgba(255,255,255,0.06);">مطفي</button></div></div>
+
+  <div style="margin-bottom:12px;"><label style="font-size:14px;color:var(--text-dim);font-weight:600;">👶 الطفل البريء</label>
+    <div style="margin-top:6px;"><button class="secondary small" onclick="toggleRole('child')" id="childBtn" style="background:rgba(255,255,255,0.06);">مطفي</button></div></div>
+
+  <div style="margin-bottom:12px;">
+    <label style="font-size:14px;color:var(--text-dim);font-weight:600;">⏱️ وقت النقاش (ثانية)</label>
+    <div style="display:flex;gap:8px;margin-top:6px;">
+      <button class="secondary small" onclick="setDiscussionTime(-30)" style="flex:1;">−</button>
+      <div style="flex:2;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border-radius:14px;font-size:20px;font-weight:900;color:var(--gold);" id="discussionTimeDisplay">120</div>
+      <button class="secondary small" onclick="setDiscussionTime(30)" style="flex:1;">+</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <button class="primary" onclick="showPlayersInput()">▶️ كمّل</button>
+  <button class="gray" onclick="showHome()">🔙 رجوع</button>
+</div>
+
+<div id="playersInputScreen" class="hidden card">
+  <h2>👥 أسامي اللاعبين</h2>
+  <p class="sub" style="margin-top:0;">اكتب أسامي اللاعبين</p>
+  <div id="playersNamesInput"></div>
+  <button class="primary" style="margin-top:16px;" onclick="startGame()">🎮 ابدأ اللعبة</button>
+  <button class="gray" onclick="showSetup()">🔙 رجوع</button>
+</div>
+
+<div id="roleScreen" class="hidden card">
+  <div class="role-reveal">
+    <div style="font-size:15px;color:var(--text-dim);margin-bottom:16px;">دورك يا <strong id="rolePlayerName" style="color:var(--gold);"></strong> هو:</div>
+    <div class="role-icon" id="roleIcon">🐺</div>
+    <div class="role-name" id="roleName">---</div>
+    <div class="role-desc" id="roleDesc">---</div>
+    <button class="green" id="roleActionBtn" onclick="onRoleActionClick()">✅ فهمت، استعمل قدرتي</button>
+  </div>
+</div>
+
+<div id="passPhoneScreen" class="hidden card" style="text-align:center;">
+  <div style="font-size:56px;margin-bottom:16px;">📱</div>
+  <h2 id="passPhoneTitle">مرر التليفون لـ</h2>
+  <div style="font-size:36px;font-weight:900;color:var(--gold);margin:20px 0;" id="passPhoneName">---</div>
+  <p class="sub" id="passPhoneSub">التليفون خاصو يوصل عندو باش يشوف دورو سراً</p>
+  <button class="primary" onclick="showRoleToPlayer()">👁️ وريلي الدور</button>
+</div>
+
+<div id="actionScreen" class="hidden card">
+  <div style="text-align:center;margin-bottom:16px;">
+    <div style="font-size:56px;margin-bottom:8px;" id="actionIcon">🐺</div>
+    <h2 id="actionTitle">الذئاب يفيقو</h2>
+    <p class="sub" style="margin-top:0;" id="actionDesc">اختار ضحية</p>
+  </div>
+  <div class="players-grid" id="actionPlayersGrid"></div>
+  <div id="actionExtraButtons" style="margin-top:16px;"></div>
+  <button class="red" style="margin-top:16px;" onclick="confirmAction()" id="confirmActionBtn" disabled>✅ أكّد</button>
+</div>
+
+<div id="hunterScreen" class="hidden card" style="text-align:center;">
+  <div style="font-size:56px;margin-bottom:8px;">🏹</div>
+  <h2>الصياد ينتقم!</h2>
+  <p class="sub" style="margin-top:0;">اختر لاعب تقتلو معاك</p>
+  <div class="players-grid" id="hunterPlayersGrid"></div>
+  <button class="red" style="margin-top:16px;" onclick="confirmHunterKill()" id="confirmHunterBtn" disabled>☠️ اقتل</button>
+</div>
+
+<div id="nightScreen" class="hidden card phase-screen phase-night">
+  <div class="phase-icon">🌙</div>
+  <div class="phase-title">الليل حلّ</div>
+  <div class="phase-desc" id="nightDesc">القرية راقدة... التليفون يدور</div>
+  <button class="primary" style="margin-top:24px;" onclick="startPassRound()">▶️ ابدأ الدور</button>
+</div>
+
+<div id="dayScreen" class="hidden card phase-screen phase-day">
+  <div class="phase-icon">☀️</div>
+  <div class="phase-title">النهار طلع</div>
+  <div class="phase-desc" id="dayDesc">---</div>
+  <button class="gold" style="margin-top:24px;" onclick="startDiscussion()" id="dayNextBtn">💬 ابدأ النقاش</button>
+</div>
+
+<div id="discussionScreen" class="hidden card">
+  <div class="discussion-timer">
+    <div class="discussion-icon">💬</div>
+    <div class="discussion-title">وقت النقاش!</div>
+    <div class="discussion-sub">تناqشو و شكّو فبعضكم<br>شكون الذئب؟ 🐺</div>
+    <div class="big-timer" id="discussionTimer">2:00</div>
+    <button class="skip-timer-btn" onclick="skipDiscussion()">⏭️ كمّل للتصويت ديركت</button>
+  </div>
+</div>
+
+<div id="votePassScreen" class="hidden card" style="text-align:center;">
+  <div style="font-size:56px;margin-bottom:16px;">🗳️</div>
+  <h2>مرر التليفون لـ</h2>
+  <div style="font-size:36px;font-weight:900;color:var(--gold);margin:20px 0;" id="votePassName">---</div>
+  <p class="sub">صوّت سراً — محد ما غادي يشوف اختيارك</p>
+  <button class="primary" onclick="showVoteToPlayer()">👁️ وريلي التصويت</button>
+</div>
+
+<div id="voteScreen" class="hidden card">
+  <div style="text-align:center;margin-bottom:16px;">
+    <div style="font-size:56px;margin-bottom:8px;">🗳️</div>
+    <h2>شكون الذئب؟</h2>
+    <p class="sub" style="margin-top:0;" id="votePlayerName">---</p>
+  </div>
+  <div class="players-grid" id="votePlayersGrid"></div>
+  <button class="red" style="margin-top:16px;" onclick="confirmVote()" id="confirmVoteBtn" disabled>✅ أكّد التصويت</button>
+</div>
+
+<div id="voteResultScreen" class="hidden card" style="text-align:center;">
+  <div style="font-size:56px;margin-bottom:16px;">📊</div>
+  <h2>نتيجة التصويت</h2>
+  <div id="voteResultContent" style="margin-top:20px;"></div>
+</div>
+
+<div id="resultScreen" class="hidden card" style="text-align:center;">
+  <div class="winner-icon" id="winnerIcon">🏆</div>
+  <div class="winner-title" id="winnerTitle">---</div>
+  <div class="winner-desc" id="winnerDesc" style="font-size:16px;line-height:1.8;opacity:0.9;margin:20px 0;"></div>
+  <div class="log" id="gameLog" style="margin-bottom:16px;text-align:right;"></div>
+  <button class="primary" onclick="playAgain()">🔄 العب مرة أخرى</button>
+  <button class="secondary" onclick="showHome()" style="margin-top:10px;">🏠 ارجع للرئيسية</button>
+</div>
+
+<div id="logScreen" class="hidden card">
+  <h2>📜 سجل الأحداث</h2>
+  <div class="log" id="logContent"></div>
+  <button class="gray" style="margin-top:16px;" onclick="closeLog()">🔙 رجوع</button>
+</div>
+
+</div>
+<script>
+    // ============ 🎮 الحالة ============
+let playerCount = 8;
+let wolfCount = 2;
+let roles = { seer: true, witch: true, guard: true, hunter: true, whiteWolf: false, silentWolf: false, jester: false, child: false };
+let players = [];
+let gameLog = [];
+let currentPlayerIndex = 0;
+let currentRound = 1;
+let gameOver = false;
+
+let wolfVictims = [];
+let guardTarget = null;
+let seerTarget = null;
+let witchAction = null;
+let protectedLastRound = null;
+let witchHealUsed = false;
+let witchKillUsed = false;
+let deadThisRound = new Set();
+let dayVoteTarget = null;
+let pendingHunter = null;
+
+let votes = [];
+let voteIndex = 0;
+let aliveVoters = [];
+
+let discussionInterval = null;
+let discussionTimeLeft = 120;
+let discussionDuration = 120;
+
+const ROLES_DATA = {
+  wolf: { icon: '🐺', name: 'ذئب', class: 'role-wolf', desc: 'أنت ذئب! فكل جولة، اختار ضحية. الذئاب ما يتشاوروش — كل واحد يختار بوحدو. إلا اختلفتو، القرعة تحكم.' },
+  villager: { icon: '👨‍🌾', name: 'قروي', class: 'role-villager', desc: 'أنت قروي بسيط. ما عندكش قدرة خاصة، لكن صوتك فالتصويت ينجم يقلب اللعبة!' },
+  seer: { icon: '🔮', name: 'العرافة', class: 'role-seer', desc: 'أنت العرافة! كل جولة، اختار لاعب باش تشوف دورو (ذئب ولا قروي).' },
+  witch: { icon: '🧪', name: 'الساحرة', class: 'role-witch', desc: 'أنت الساحرة! عندك دواء (تحيي ضحية) وسم (تقتل لاعب). كل واحد مرة وحدة فالعبة كاملة — تنجم تأجلهم.' },
+  guard: { icon: '🛡️', name: 'الحامي', class: 'role-guard', desc: 'أنت الحامي! كل جولة اختار لاعب تحميه. ما تنجمش تحمي نفسك، ولا نفس اللاعب مرتين متتاليتين.' },
+  hunter: { icon: '🏹', name: 'الصياد', class: 'role-hunter', desc: 'أنت الصياد! كي تموت (فليل ولا تصويت)، تنجم تختار واحد يموت معاك.' },
+  whiteWolf: { icon: '🐺', name: 'الذئب الأبيض', class: 'role-whitewolf', desc: 'أنت الذئب الأبيض! تظهر مع الذئاب فليل، لكن هدفك الحقيقي: تقتل الذئاب الآخرين وتبقى آخر واحد. تربح بوحدك!' },
+  jester: { icon: '🎭', name: 'المهرج', class: 'role-jester', desc: 'أنت المهرج! هدفك: يقنعو الناس بلي إنت ذئب ويصوّتو عليك. إلا قتلتوك بالتصويت → تربح ديركت! ما تنجمش تربح إلا قتلتوك.' },
+  child: { icon: '👶', name: 'الطفل البريء', class: 'role-child', desc: 'أنت الطفل البريء! كل جولة، تنجم تشوف دور لاعب. لكن إلا شفت ذئب → تموت ديركت من الخوف!' },
+  silentWolf: { icon: '🐺', name: 'الذئب الصامت', class: 'role-silentwolf', desc: 'أنت الذئب الصامت! تظهر كذئب عادي فليل، لكن العرافة تشوفك كقروي. إلا مت، يظهر دورك الحقيقي.' }
+};
+
+// ============ 📱 التنقل ============
+function hideAll() {
+  ['homeScreen','rulesScreen','setupScreen','playersInputScreen','roleScreen','passPhoneScreen','actionScreen','hunterScreen','nightScreen','dayScreen','discussionScreen','votePassScreen','voteScreen','voteResultScreen','resultScreen','logScreen'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('hidden');
+  });
+}
+function showHome() { hideAll(); document.getElementById('homeScreen').classList.remove('hidden'); }
+function showRules() { hideAll(); document.getElementById('rulesScreen').classList.remove('hidden'); }
+function showSetup() { hideAll(); document.getElementById('setupScreen').classList.remove('hidden'); updateSetupUI(); }
+
+// ============ ⚙️ الإعدادات ============
+function setPlayerCount(n) {
+  playerCount = Math.max(4, Math.min(20, n));
+  wolfCount = Math.min(wolfCount, Math.max(1, Math.floor(playerCount / 3)));
+  updateSetupUI();
+}
+function setWolves(n) {
+  wolfCount = Math.max(1, Math.min(Math.floor(playerCount / 3), n));
+  updateSetupUI();
+}
+function toggleRole(role) {
+  roles[role] = !roles[role];
+  updateSetupUI();
+}
+function setDiscussionTime(delta) {
+  discussionDuration = Math.max(30, Math.min(300, discussionDuration + delta));
+  updateSetupUI();
+}
+function updateSetupUI() {
+  document.getElementById('playerCountDisplay').textContent = playerCount;
+  document.getElementById('wolfCountDisplay').textContent = wolfCount;
+  document.getElementById('seerBtn').textContent = roles.seer ? 'مفعّلة' : 'مطفيّة';
+  document.getElementById('seerBtn').style.background = roles.seer ? 'linear-gradient(135deg,#8338ec,#5a2a9e)' : 'rgba(255,255,255,0.06)';
+  document.getElementById('witchBtn').textContent = roles.witch ? 'مفعّلة' : 'مطفيّة';
+  document.getElementById('witchBtn').style.background = roles.witch ? 'linear-gradient(135deg,#ff006e,#c2185b)' : 'rgba(255,255,255,0.06)';
+  document.getElementById('guardBtn').textContent = roles.guard ? 'مفعّلة' : 'مطفيّة';
+  document.getElementById('guardBtn').style.background = roles.guard ? 'linear-gradient(135deg,#118ab2,#0d6d8c)' : 'rgba(255,255,255,0.06)';
+  document.getElementById('hunterBtn').textContent = roles.hunter ? 'مفعّلة' : 'مطفيّة';
+  document.getElementById('hunterBtn').style.background = roles.hunter ? 'linear-gradient(135deg,#fca311,#e67e22)' : 'rgba(255,255,255,0.06)';
+  const wwBtn = document.getElementById('whiteWolfBtn');
+  if (wwBtn) {
+    wwBtn.textContent = roles.whiteWolf ? 'مفعّلة' : 'مطفيّة';
+    wwBtn.style.background = roles.whiteWolf ? 'linear-gradient(135deg,#bdc3c7,#95a5a6)' : 'rgba(255,255,255,0.06)';
+  }
+  const swBtn = document.getElementById('silentWolfBtn');
+  if (swBtn) {
+    swBtn.textContent = roles.silentWolf ? 'مفعّلة' : 'مطفيّة';
+    swBtn.style.background = roles.silentWolf ? 'linear-gradient(135deg,#34495e,#2c3e50)' : 'rgba(255,255,255,0.06)';
+  }
+  const jestBtn = document.getElementById('jesterBtn');
+  if (jestBtn) {
+    jestBtn.textContent = roles.jester ? 'مفعّلة' : 'مطفيّة';
+    jestBtn.style.background = roles.jester ? 'linear-gradient(135deg,#f39c12,#d35400)' : 'rgba(255,255,255,0.06)';
+  }
+  const childBtn = document.getElementById('childBtn');
+  if (childBtn) {
+    childBtn.textContent = roles.child ? 'مفعّلة' : 'مطفيّة';
+    childBtn.style.background = roles.child ? 'linear-gradient(135deg,#3498db,#2980b9)' : 'rgba(255,255,255,0.06)';
+  }
+  const dtEl = document.getElementById('discussionTimeDisplay');
+  if (dtEl) dtEl.textContent = discussionDuration;
+  document.querySelectorAll('#playerCountGroup button').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.count) === playerCount);
+  });
+}
+
+// ============ 👥 أسامي اللاعبين ============
+function showPlayersInput() {
+  hideAll();
+  document.getElementById('playersInputScreen').classList.remove('hidden');
+  renderPlayersNamesInput();
+}
+function renderPlayersNamesInput() {
+  const c = document.getElementById('playersNamesInput');
+  c.innerHTML = '';
+  for (let i = 0; i < playerCount; i++) {
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex;gap:8px;margin-bottom:8px;';
+    row.innerHTML = `<input type="text" placeholder="اسم اللاعب ${i+1}" value="${players[i] ? players[i].name : ''}" oninput="updatePlayerName(${i}, this.value)">`;
+    c.appendChild(row);
+  }
+}
+function updatePlayerName(i, val) {
+  if (!players[i]) players[i] = { name: '', role: '', alive: true, id: i };
+  players[i].name = val || ('لاعب ' + (i + 1));
+}
+
+// ============ 🎮 بداية اللعبة ============
+function startGame() {
+  for (let i = 0; i < playerCount; i++) {
+    if (!players[i]) players[i] = { name: 'لاعب ' + (i + 1), role: '', alive: true, id: i };
+    if (!players[i].name) players[i].name = 'لاعب ' + (i + 1);
+  }
+  players = players.slice(0, playerCount);
+  assignRoles();
+  gameLog = [];
+  addLog('🎮 بدات اللعبة بـ ' + playerCount + ' لاعبين', 'log-day');
+  addLog('🐺 عدد الذئاب: ' + wolfCount, 'log-night');
+  gameOver = false;
+  currentRound = 1;
+  resetRoundState();
+  startRound();
+}
+function assignRoles() {
+  const roleList = [];
+  for (let i = 0; i < wolfCount; i++) roleList.push('wolf');
+  if (roles.whiteWolf && roleList.length > 0) roleList.push('whiteWolf');
+  if (roles.silentWolf && roleList.length > 0) roleList.push('silentWolf');
+  if (roles.seer) roleList.push('seer');
+  if (roles.witch) roleList.push('witch');
+  if (roles.guard) roleList.push('guard');
+  if (roles.hunter) roleList.push('hunter');
+  if (roles.jester) roleList.push('jester');
+  if (roles.child) roleList.push('child');
+  while (roleList.length < playerCount) roleList.push('villager');
+  for (let i = roleList.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [roleList[i], roleList[j]] = [roleList[j], roleList[i]];
+  }
+  players.forEach((p, i) => { p.role = roleList[i]; p.alive = true; });
+}
+function resetRoundState() {
+  wolfVictims = [];
+  guardTarget = null;
+  seerTarget = null;
+  witchAction = null;
+  dayVoteTarget = null;
+  deadThisRound = new Set();
+}
+
+// ============ 🔄 دورة اللعب ============
+function startRound() {
+  addLog('🌙 الجولة ' + currentRound + ' بدات', 'log-night');
+  currentPlayerIndex = 0;
+  resetRoundState();
+  hideAll();
+  document.body.classList.add('night-mode');
+  document.body.classList.remove('day-mode');
+  document.getElementById('nightScreen').classList.remove('hidden');
+  document.getElementById('nightDesc').textContent = 'الجولة ' + currentRound + ' — التليفون يدور بين اللاعبين';
+}
+function startPassRound() { currentPlayerIndex = 0; showNextPlayer(); }
+
+function showNextPlayer() {
+  while (currentPlayerIndex < players.length && !players[currentPlayerIndex].alive) currentPlayerIndex++;
+  if (currentPlayerIndex >= players.length) { resolveNight(); return; }
+  hideAll();
+  const player = players[currentPlayerIndex];
+  document.getElementById('passPhoneScreen').classList.remove('hidden');
+  document.getElementById('passPhoneTitle').textContent = 'مرر التليفون لـ';
+  document.getElementById('passPhoneName').textContent = player.name;
+  document.getElementById('passPhoneSub').textContent = 'التليفون خاصو يوصل عندو باش يشوف دورو سراً';
+}
+
+function showRoleToPlayer() {
+  hideAll();
+  const player = players[currentPlayerIndex];
+  const roleData = ROLES_DATA[player.role];
+  document.getElementById('roleScreen').classList.remove('hidden');
+  document.getElementById('rolePlayerName').textContent = player.name;
+  document.getElementById('roleIcon').textContent = roleData.icon;
+  document.getElementById('roleName').textContent = roleData.name;
+  document.getElementById('roleName').className = 'role-name ' + roleData.class;
+  document.getElementById('roleDesc').textContent = roleData.desc;
+  document.getElementById('roleDesc').className = 'role-desc';
+  const btn = document.getElementById('roleActionBtn');
+  if (player.role === 'villager') { btn.textContent = '✅ فهمت، مرر التليفون'; btn.className = 'green'; }
+  else if (player.role === 'wolf') { btn.textContent = '🐺 اختار ضحية'; btn.className = 'primary'; }
+  else if (player.role === 'seer') { btn.textContent = '🔮 اختار لاعب تشوف دورو'; btn.className = 'purple'; }
+  else if (player.role === 'witch') { btn.textContent = '🧪 استعمل قدرتي'; btn.className = 'red'; }
+  else if (player.role === 'guard') { btn.textContent = '🛡️ اختار لاعب تحميه'; btn.className = 'secondary'; }
+  else if (player.role === 'hunter') { btn.textContent = '✅ فهمت، مرر التليفون'; btn.className = 'gold'; }
+  else if (player.role === 'whiteWolf') { btn.textContent = '🐺 اختار ذئب تقتلو'; btn.className = 'primary'; }
+  else if (player.role === 'silentWolf') { btn.textContent = '🐺 اختار ضحية'; btn.className = 'primary'; }
+  else if (player.role === 'jester') { btn.textContent = '🎭 فهمت، مرر التليفون'; btn.className = 'gold'; }
+  else if (player.role === 'child') { btn.textContent = '👶 اختار لاعب تشوف دورو'; btn.className = 'secondary'; }
+}
+
+function onRoleActionClick() {
+  const player = players[currentPlayerIndex];
+  if (player.role === 'wolf') showWolfAction();
+  else if (player.role === 'silentWolf') showWolfAction();
+  else if (player.role === 'seer') showSeerAction();
+  else if (player.role === 'witch') showWitchAction();
+  else if (player.role === 'guard') showGuardAction();
+  else if (player.role === 'whiteWolf') showWhiteWolfAction();
+  else if (player.role === 'child') showChildAction();
+  else nextPlayer();
+}
+function nextPlayer() { currentPlayerIndex++; showNextPlayer(); }
+// ============ 🐺 الذئب ============
+function showWolfAction() {
+  hideAll();
+  document.getElementById('actionScreen').classList.remove('hidden');
+  document.getElementById('actionIcon').textContent = '🐺';
+  document.getElementById('actionTitle').textContent = 'الذئاب يفيقو';
+  document.getElementById('actionDesc').textContent = 'اختار ضحية (كل ذئب يختار بوحدو — ما تشوفش اختيار الآخرين)';
+  document.getElementById('actionExtraButtons').innerHTML = '';
+  const alivePlayers = players.filter(p => p.alive && p.role !== 'wolf' && p.role !== 'whiteWolf' && p.role !== 'silentWolf');
+  renderActionGrid(alivePlayers, (idx) => {
+    wolfVictims.push(idx);
+    showToast('🐺 اختريت ' + players[idx].name);
+    setTimeout(() => nextPlayer(), 1200);
+  });
+}
+
+// ============ 🐺 الذئب الأبيض ============
+function showWhiteWolfAction() {
+  hideAll();
+  document.getElementById('actionScreen').classList.remove('hidden');
+  document.getElementById('actionIcon').textContent = '🐺';
+  document.getElementById('actionTitle').textContent = 'الذئب الأبيض يفيق';
+  document.getElementById('actionDesc').textContent = 'اختار ذئب تقتلو (ولا تخطى)';
+  document.getElementById('actionExtraButtons').innerHTML = '';
+  const otherWolves = players.filter(p => p.alive && (p.role === 'wolf' || p.role === 'silentWolf'));
+  if (otherWolves.length === 0) {
+    addLog('🐺 الذئب الأبيض ما لقاش ذئاب يقتلهم', 'log-night');
+    showToast('ما فماش ذئاب آخرين');
+    setTimeout(() => nextPlayer(), 1200);
+    return;
+  }
+  renderActionGrid(otherWolves, (idx) => {
+    wolfVictims.push(idx);
+    addLog('🐺 الذئب الأبيض قتل ' + players[idx].name, 'log-death');
+    showToast('🐺 قتلت ' + players[idx].name);
+    setTimeout(() => nextPlayer(), 1200);
+  });
+}
+
+// ============ 👶 الطفل البريء ============
+function showChildAction() {
+  hideAll();
+  document.getElementById('actionScreen').classList.remove('hidden');
+  document.getElementById('actionIcon').textContent = '👶';
+  document.getElementById('actionTitle').textContent = 'الطفل البريء';
+  document.getElementById('actionDesc').textContent = 'اختار لاعب باش تشوف دورو (خطر: إلا شفت ذئب، تموت!)';
+  document.getElementById('actionExtraButtons').innerHTML = '';
+  const alivePlayers = players.filter(p => p.alive);
+  renderActionGrid(alivePlayers, (idx) => {
+    const target = players[idx];
+    if (target.role === 'wolf' || target.role === 'whiteWolf' || target.role === 'silentWolf') {
+      showToast('💀 ' + target.name + ' هو ذئب! إنت متت من الخوف!');
+      addLog('👶 الطفل شاف ' + target.name + ' (ذئب) → مات', 'log-death');
+      players[currentPlayerIndex].alive = false;
+      setTimeout(() => {
+        if (checkGameOver()) return;
+        nextPlayer();
+      }, 2000);
+    } else {
+      const roleData = ROLES_DATA[target.role];
+      showToast('👶 ' + target.name + ' هو: ' + roleData.name);
+      addLog('👶 الطفل شاف ' + target.name + ' → ' + roleData.name, 'log-night');
+      setTimeout(() => nextPlayer(), 2500);
+    }
+  });
+}
+
+// ============ 🔮 العرافة ============
+function showSeerAction() {
+  hideAll();
+  document.getElementById('actionScreen').classList.remove('hidden');
+  document.getElementById('actionIcon').textContent = '🔮';
+  document.getElementById('actionTitle').textContent = 'العرافة تفيق';
+  document.getElementById('actionDesc').textContent = 'اختار لاعب باش تشوف دورو';
+  document.getElementById('actionExtraButtons').innerHTML = '';
+  const alivePlayers = players.filter(p => p.alive);
+  renderActionGrid(alivePlayers, (idx) => {
+    const target = players[idx];
+    seerTarget = idx;
+    let displayRole = target.role;
+    if (target.role === 'silentWolf') displayRole = 'villager';
+    const roleData = ROLES_DATA[displayRole];
+    showToast('🔮 ' + target.name + ' هو: ' + roleData.name);
+    addLog('🔮 العرافة شافت ' + target.name + ' → ' + roleData.name, 'log-night');
+    setTimeout(() => nextPlayer(), 2500);
+  });
+}
+
+// ============ 🧪 الساحرة ============
+function showWitchAction() {
+  hideAll();
+  document.getElementById('actionScreen').classList.remove('hidden');
+  document.getElementById('actionIcon').textContent = '🧪';
+  document.getElementById('actionTitle').textContent = 'الساحرة تفيق';
+  document.getElementById('actionDesc').textContent = 'اختار شنوا تحب تعمل (ولا تخطى باش تأجل)';
+  document.getElementById('actionExtraButtons').innerHTML = '';
+  document.getElementById('actionPlayersGrid').innerHTML = '';
+
+  if (!witchHealUsed) {
+    const healBtn = document.createElement('button');
+    healBtn.className = 'green';
+    healBtn.style.marginBottom = '8px';
+    healBtn.textContent = '💊 استعمل الدواء (تحيي ضحية الذئاب)';
+    healBtn.onclick = () => showWitchTargetPicker('heal', players.filter(p => p.alive));
+    document.getElementById('actionExtraButtons').appendChild(healBtn);
+  }
+  if (!witchKillUsed) {
+    const killBtn = document.createElement('button');
+    killBtn.className = 'red';
+    killBtn.style.marginBottom = '8px';
+    killBtn.textContent = '☠️ استعمل السم (تقتل لاعب)';
+    killBtn.onclick = () => showWitchTargetPicker('kill', players.filter(p => p.alive && p.role !== 'witch'));
+    document.getElementById('actionExtraButtons').appendChild(killBtn);
+  }
+  const skipBtn = document.createElement('button');
+  skipBtn.className = 'gray';
+  skipBtn.textContent = '⏭️ تأجل للجولة الجاية';
+  skipBtn.onclick = () => { addLog('🧪 الساحرة أجلت قدرتها', 'log-night'); nextPlayer(); };
+  document.getElementById('actionExtraButtons').appendChild(skipBtn);
+  document.getElementById('confirmActionBtn').style.display = 'none';
+}
+
+function showWitchTargetPicker(type, targets) {
+  document.getElementById('actionTitle').textContent = type === 'heal' ? '💊 شكون تحب تحيي؟' : '☠️ شكون تحب تقتل؟';
+  document.getElementById('actionDesc').textContent = 'اختار اللاعب';
+  document.getElementById('actionExtraButtons').innerHTML = '';
+  const grid = document.getElementById('actionPlayersGrid');
+  grid.innerHTML = '';
+  let selectedIdx = null;
+  targets.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'player-card';
+    card.innerHTML = `<div class="player-avatar">👤</div><div class="player-name">${p.name}</div>`;
+    card.onclick = () => {
+      grid.querySelectorAll('.player-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedIdx = p.id;
+      document.getElementById('confirmActionBtn').disabled = false;
+    };
+    grid.appendChild(card);
+  });
+  document.getElementById('confirmActionBtn').style.display = 'block';
+  document.getElementById('confirmActionBtn').disabled = true;
+  document.getElementById('confirmActionBtn').onclick = () => {
+    if (selectedIdx === null) return;
+    if (type === 'heal') {
+      witchHealUsed = true;
+      witchAction = { type: 'heal', target: selectedIdx };
+      addLog('🧪 الساحرة استعملت الدواء على ' + players[selectedIdx].name, 'log-night');
+      showToast('💊 الدواء استعمل!');
+    } else {
+      witchKillUsed = true;
+      witchAction = { type: 'kill', target: selectedIdx };
+      addLog('🧪 الساحرة استعملت السم على ' + players[selectedIdx].name, 'log-night');
+      showToast('☠️ السم استعمل!');
+    }
+    setTimeout(() => nextPlayer(), 1200);
+  };
+}
+
+// ============ 🛡️ الحامي ============
+function showGuardAction() {
+  hideAll();
+  document.getElementById('actionScreen').classList.remove('hidden');
+  document.getElementById('actionIcon').textContent = '🛡️';
+  document.getElementById('actionTitle').textContent = 'الحامي يفيق';
+  document.getElementById('actionDesc').textContent = 'اختار لاعب تحميه (ماشي نفسك، ماشي نفس اللاعب مرتين متتاليتين)';
+  document.getElementById('actionExtraButtons').innerHTML = '';
+  const guard = players.find(p => p.role === 'guard');
+  const alivePlayers = players.filter(p => p.alive && p.id !== guard.id && p.id !== protectedLastRound);
+  renderActionGrid(alivePlayers, (idx) => {
+    guardTarget = idx;
+    protectedLastRound = idx;
+    addLog('🛡️ الحامي حمى ' + players[idx].name, 'log-night');
+    showToast('🛡️ حميت ' + players[idx].name);
+    setTimeout(() => nextPlayer(), 1200);
+  });
+}
+
+// ============ 🎯 شبكة الاختيار ============
+function renderActionGrid(alivePlayers, callback) {
+  const grid = document.getElementById('actionPlayersGrid');
+  grid.innerHTML = '';
+  let selectedIdx = null;
+  alivePlayers.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'player-card';
+    card.innerHTML = `<div class="player-avatar">👤</div><div class="player-name">${p.name}</div>`;
+    card.onclick = () => {
+      grid.querySelectorAll('.player-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedIdx = p.id;
+      document.getElementById('confirmActionBtn').disabled = false;
+    };
+    grid.appendChild(card);
+  });
+  document.getElementById('confirmActionBtn').style.display = 'block';
+  document.getElementById('confirmActionBtn').disabled = true;
+  document.getElementById('confirmActionBtn').onclick = () => {
+    if (selectedIdx !== null) callback(selectedIdx);
+  };
+}
+function confirmAction() {}
+
+// ============ 🌅 نتائج الجولة ============
+function resolveNight() {
+  hideAll();
+  document.body.classList.remove('night-mode');
+  document.body.classList.add('day-mode');
+  let deaths = [];
+  if (wolfVictims.length > 0) {
+    const unique = [...new Set(wolfVictims)];
+    let victimIdx;
+    if (unique.length === 1) victimIdx = unique[0];
+    else {
+      victimIdx = unique[Math.floor(Math.random() * unique.length)];
+      addLog('🐺 الذئاب اختلفو → القرعة اختارت ' + players[victimIdx].name, 'log-night');
+    }
+    if (guardTarget === victimIdx) {
+      addLog('🛡️ الحامي حمى ' + players[victimIdx].name + ' → ما ماتش', 'log-day');
+    } else if (witchAction && witchAction.type === 'heal' && witchAction.target === victimIdx) {
+      addLog('💊 الساحرة عالجت ' + players[victimIdx].name + ' → ما ماتش', 'log-day');
+      witchAction = null;
+    } else {
+      players[victimIdx].alive = false;
+      deaths.push(victimIdx);
+      addLog('💀 ' + players[victimIdx].name + ' مات من الذئاب', 'log-death');
+    }
+  } else {
+    addLog('🌙 ما فماش ضحايا من الذئاب', 'log-night');
+  }
+  if (witchAction && witchAction.type === 'kill') {
+    const killIdx = witchAction.target;
+    if (players[killIdx].alive) {
+      players[killIdx].alive = false;
+      deaths.push(killIdx);
+      addLog('☠️ الساحرة قتلت ' + players[killIdx].name, 'log-death');
+    }
+  }
+  deaths.forEach(idx => {
+    if (players[idx].role === 'hunter' && !players[idx].alive) pendingHunter = idx;
+  });
+  if (checkGameOver()) return;
+  if (pendingHunter !== null) { showHunterScreen(pendingHunter); return; }
+  showDay(deaths);
+}
+
+// ============ 🏹 الصياد ============
+function showHunterScreen(hunterIdx) {
+  hideAll();
+  document.getElementById('hunterScreen').classList.remove('hidden');
+  const grid = document.getElementById('hunterPlayersGrid');
+  grid.innerHTML = '';
+  const alivePlayers = players.filter(p => p.alive);
+  alivePlayers.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'player-card';
+    card.innerHTML = `<div class="player-avatar">👤</div><div class="player-name">${p.name}</div>`;
+    card.onclick = () => {
+      grid.querySelectorAll('.player-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      document.getElementById('confirmHunterBtn').disabled = false;
+    };
+    grid.appendChild(card);
+  });
+  document.getElementById('confirmHunterBtn').disabled = true;
+}
+function confirmHunterKill() {
+  const selected = document.querySelector('#hunterPlayersGrid .player-card.selected');
+  if (!selected) return;
+  const name = selected.querySelector('.player-name').textContent;
+  const target = players.find(p => p.name === name && p.alive);
+  if (target) {
+    target.alive = false;
+    addLog('🏹 الصياد قتل ' + target.name + ' معاه', 'log-death');
+    showToast('🏹 الصياد قتل ' + target.name);
+  }
+  pendingHunter = null;
+  if (checkGameOver()) return;
+  showDay([target ? target.id : null].filter(x => x !== null));
+}
+
+// ============ ☀️ النهار ============
+function showDay(deaths) {
+  hideAll();
+  document.getElementById('dayScreen').classList.remove('hidden');
+  let msg = deaths.length === 0 ? '🎉 ما مات حتى واحد!' : '💀 ماتو: ' + deaths.map(i => players[i].name).join('، ');
+  document.getElementById('dayDesc').textContent = msg;
+  addLog('☀️ النهار: ' + msg, 'log-day');
+}
+
+// ============ ⏱️ النقاش ============
+function startDiscussion() {
+  hideAll();
+  document.getElementById('discussionScreen').classList.remove('hidden');
+  discussionTimeLeft = discussionDuration;
+  updateDiscussionTimer();
+  clearInterval(discussionInterval);
+  discussionInterval = setInterval(() => {
+    discussionTimeLeft--;
+    updateDiscussionTimer();
+    if (discussionTimeLeft <= 0) {
+      clearInterval(discussionInterval);
+      showToast('⏰ سالا الوقت! يلا نصوّتو');
+      startVote();
+    }
+  }, 1000);
+}
+function updateDiscussionTimer() {
+  const min = Math.floor(discussionTimeLeft / 60);
+  const sec = discussionTimeLeft % 60;
+  const el = document.getElementById('discussionTimer');
+  el.textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
+  el.classList.toggle('warning', discussionTimeLeft <= 10);
+}
+function skipDiscussion() { clearInterval(discussionInterval); startVote(); }
+
+// ============ 🗳️ التصويت السري ============
+function startVote() {
+  aliveVoters = players.filter(p => p.alive).map(p => p.id);
+  votes = [];
+  voteIndex = 0;
+  showNextVoter();
+}
+function showNextVoter() {
+  if (voteIndex >= aliveVoters.length) { resolveVotes(); return; }
+  hideAll();
+  const voterId = aliveVoters[voteIndex];
+  const voter = players[voterId];
+  document.getElementById('votePassScreen').classList.remove('hidden');
+  document.getElementById('votePassName').textContent = voter.name;
+}
+function showVoteToPlayer() {
+  hideAll();
+  document.getElementById('voteScreen').classList.remove('hidden');
+  const voterId = aliveVoters[voteIndex];
+  const voter = players[voterId];
+  document.getElementById('votePlayerName').textContent = voter.name + '، اختار شكون تشكّ فيه';
+  const grid = document.getElementById('votePlayersGrid');
+  grid.innerHTML = '';
+  let selectedIdx = null;
+  const candidates = players.filter(p => p.alive && p.id !== voterId);
+  candidates.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'player-card';
+    card.innerHTML = `<div class="player-avatar">👤</div><div class="player-name">${p.name}</div>`;
+    card.onclick = () => {
+      grid.querySelectorAll('.player-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedIdx = p.id;
+      document.getElementById('confirmVoteBtn').disabled = false;
+    };
+    grid.appendChild(card);
+  });
+  document.getElementById('confirmVoteBtn').disabled = true;
+  window._currentVoteChoice = () => selectedIdx;
+}
+function confirmVote() {
+  const choice = window._currentVoteChoice ? window._currentVoteChoice() : null;
+  if (choice === null) return;
+  votes.push({ voter: aliveVoters[voteIndex], target: choice });
+  voteIndex++;
+  showNextVoter();
+}
+function resolveVotes() {
+  const tally = {};
+  votes.forEach(v => { tally[v.target] = (tally[v.target] || 0) + 1; });
+  let maxVotes = 0, topTargets = [];
+  Object.keys(tally).forEach(id => {
+    const n = tally[id];
+    if (n > maxVotes) { maxVotes = n; topTargets = [parseInt(id)]; }
+    else if (n === maxVotes) topTargets.push(parseInt(id));
+  });
+  hideAll();
+  document.getElementById('voteResultScreen').classList.remove('hidden');
+  const content = document.getElementById('voteResultContent');
+  content.innerHTML = '';
+  const votesList = document.createElement('div');
+  votesList.style.cssText = 'text-align:right;font-size:14px;line-height:1.8;margin-bottom:16px;padding:14px;background:rgba(255,255,255,0.05);border-radius:14px;';
+  let votesHtml = '<strong>🗳️ الأصوات:</strong><br>';
+  Object.keys(tally).forEach(id => { votesHtml += `• ${players[id].name}: ${tally[id]} صوت<br>`; });
+  votesList.innerHTML = votesHtml;
+  content.appendChild(votesList);
+  if (maxVotes === 0 || topTargets.length === 0) {
+    content.innerHTML += '<div style="font-size:20px;font-weight:800;color:var(--gold);margin:20px 0;">🤷 ما فماش تصويتات</div>';
+    setTimeout(() => { if (checkGameOver()) return; currentRound++; startRound(); }, 2000);
+    return;
+  }
+  let finalTarget;
+  if (topTargets.length === 1) finalTarget = topTargets[0];
+  else {
+    finalTarget = topTargets[Math.floor(Math.random() * topTargets.length)];
+    content.innerHTML += `<div style="font-size:16px;color:var(--gold);margin:12px 0;">⚖️ تعادل! القرعة اختارت</div>`;
+  }
+  const victim = players[finalTarget];
+  victim.alive = false;
+  addLog('🗳️ القرية صوّتت على ' + victim.name + ' → مات', 'log-death');
+  showToast('💀 ' + victim.name + ' مات!');
+
+  // 🎭 المهرج يربح إلا قتلوه بالتصويت
+  if (victim.role === 'jester') {
+    victim._wonByVote = true;
+    content.innerHTML += `<div style="font-size:28px;font-weight:900;color:#f39c12;margin:20px 0;">🎭 المهرج ربح! ضحك على القرية!</div>`;
+    addLog('🎭 المهرج ربح!', 'log-day');
+    setTimeout(() => endGame('jester'), 2000);
+    return;
+  }
+
+  content.innerHTML += `<div style="font-size:24px;font-weight:900;color:var(--wolf2);margin:20px 0;">💀 ${victim.name} مات!</div>`;
+  if (victim.role === 'hunter') {
+    pendingHunter = victim.id;
+    setTimeout(() => showHunterScreen(victim.id), 2000);
+    return;
+  }
+  setTimeout(() => { if (checkGameOver()) return; currentRound++; startRound(); }, 2500);
+}
+
+// ============ 🏆 النهاية ============
+function checkGameOver() {
+  if (players.some(p => p.role === 'jester' && !p.alive && p._wonByVote)) {
+    endGame('jester');
+    return true;
+  }
+  const aliveWolves = players.filter(p => p.alive && (p.role === 'wolf' || p.role === 'silentWolf')).length;
+  const aliveWhiteWolf = players.filter(p => p.alive && p.role === 'whiteWolf').length;
+  const aliveVillagers = players.filter(p => p.alive && p.role !== 'wolf' && p.role !== 'whiteWolf' && p.role !== 'silentWolf').length;
+
+  if (aliveWhiteWolf === 1 && aliveWolves === 0 && aliveVillagers === 0) {
+    endGame('whiteWolf');
+    return true;
+  }
+  if (aliveWolves === 0 && aliveWhiteWolf === 0) {
+    endGame('villagers');
+    return true;
+  }
+  if (aliveWolves + aliveWhiteWolf >= aliveVillagers && aliveVillagers > 0) {
+    endGame('wolves');
+    return true;
+  }
+  return false;
+}
+function endGame(winner) {
+  gameOver = true;
+  hideAll();
+  document.getElementById('resultScreen').classList.remove('hidden');
+  if (winner === 'villagers') {
+    document.getElementById('winnerIcon').textContent = '👨‍🌾🎉';
+    document.getElementById('winnerTitle').textContent = 'القرويين ربحو!';
+    document.getElementById('winnerDesc').textContent = 'القرية نجت من الذئاب! 🎉';
+    addLog('🏆 القرويين ربحو!', 'log-day');
+  } else if (winner === 'whiteWolf') {
+    document.getElementById('winnerIcon').textContent = '🐺👑';
+    document.getElementById('winnerTitle').textContent = 'الذئب الأبيض ربح!';
+    document.getElementById('winnerDesc').textContent = 'الذئب الأبيض غلب الكل! 🐺';
+    addLog('🏆 الذئب الأبيض ربح!', 'log-night');
+  } else if (winner === 'jester') {
+    document.getElementById('winnerIcon').textContent = '🎭👑';
+    document.getElementById('winnerTitle').textContent = 'المهرج ربح!';
+    document.getElementById('winnerDesc').textContent = 'المهرج ضحك على القرية كلها! 🎭';
+    addLog('🏆 المهرج ربح!', 'log-day');
+  } else {
+    document.getElementById('winnerIcon').textContent = '🐺🏆';
+    document.getElementById('winnerTitle').textContent = 'الذئاب ربحو!';
+    document.getElementById('winnerDesc').textContent = 'الذئاب سيطرو على القرية! 🐺';
+    addLog('🏆 الذئاب ربحو!', 'log-night');
+  }
+  const logEl = document.getElementById('gameLog');
+  logEl.innerHTML = '';
+  gameLog.forEach(item => {
+    const d = document.createElement('div');
+    d.className = 'log-item ' + (item.cls || '');
+    d.textContent = item.text;
+    logEl.appendChild(d);
+  });
+  const rolesList = players.map(p => `${ROLES_DATA[p.role].icon} ${p.name}: ${ROLES_DATA[p.role].name}`).join('\n');
+  const rolesEl = document.createElement('div');
+  rolesEl.style.cssText = 'margin-top:16px;padding:16px;background:rgba(255,255,255,0.05);border-radius:14px;font-size:14px;line-height:1.8;text-align:right;white-space:pre-line;';
+  rolesEl.textContent = '🎭 الأدوار:\n' + rolesList;
+  document.getElementById('resultScreen').appendChild(rolesEl);
+}
+
+// ============ 📜 السجل ============
+function addLog(text, cls) { gameLog.push({ text, cls }); }
+function showLog() {
+  hideAll();
+  document.getElementById('logScreen').classList.remove('hidden');
+  const c = document.getElementById('logContent');
+  c.innerHTML = '';
+  gameLog.forEach(item => {
+    const d = document.createElement('div');
+    d.className = 'log-item ' + (item.cls || '');
+    d.textContent = item.text;
+    c.appendChild(d);
+  });
+}
+function closeLog() {
+  if (gameOver) document.getElementById('resultScreen').classList.remove('hidden');
+  else showHome();
+}
+
+// ============ 🔔 إشعار ============
+function showToast(msg) {
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.95);color:#fff;padding:16px 28px;border-radius:16px;font-size:16px;font-weight:700;z-index:1000;box-shadow:0 8px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.15);animation:toastIn 0.3s ease;max-width:90%;text-align:center;';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2500);
+}
+
+// ============ 🔄 العب مرة أخرى ============
+function playAgain() {
+  const savedNames = players.map(p => p.name);
+  gameLog = [];
+  currentRound = 1;
+  currentPlayerIndex = 0;
+  gameOver = false;
+  wolfVictims = [];
+  guardTarget = null;
+  seerTarget = null;
+  witchAction = null;
+  protectedLastRound = null;
+  witchHealUsed = false;
+  witchKillUsed = false;
+  deadThisRound = new Set();
+  dayVoteTarget = null;
+  pendingHunter = null;
+  votes = [];
+  voteIndex = 0;
+  aliveVoters = [];
+  players = savedNames.map((name, i) => ({ name: name, role: '', alive: true, id: i }));
+  showSetup();
+}
+
+// ============ 🎬 التشغيل ============
+updateSetupUI();
+</script>
+</body>
+</html>
